@@ -1,9 +1,62 @@
 ---
-- name: Nginx | Installation
-  include_tasks: "pkgmgr/{{ ansible_pkg_mgr }}.yml"
+  # TravisCI Docker test role
 
-- name: Nginx | Ensure Nginx service is enabled and started
-  service:
-    name: nginx
-    enabled: yes
-    state: started
+- name: install the 'C development libraries' package group
+  dnf:
+    name: '@C development libraries'
+    state: present
+
+- name: install the 'Development libraries' package group
+  dnf:
+    name: '@Development libraries'
+    state: present
+
+- name: install the latest version of clang
+  dnf:
+    name: clang
+    state: latest
+
+- name: install the latest version of golang
+  dnf:
+    name: golang
+    state: latest
+
+- name: install the latest version of golang net dev
+  dnf:
+    name: golang-googlecode-net-devel
+    state: latest
+
+- name: install the latest version of python2
+  dnf:
+    name: python2
+    state: latest
+
+- name: install the latest version of python3
+  dnf:
+    name: python3
+    state: latest
+
+- name: install the 'Development tools' package group
+  dnf:
+    name: '@Development tools'
+    state: present
+
+- name: install the 'Editors' package group
+  dnf:
+    name: '@Editors'
+    state: present
+
+- name: install the latest version of atom
+  dnf:
+    name: atom
+    state: latest
+
+- name: install the latest version of python-pip
+  dnf:
+    name: python-pip
+    state: latest
+
+- name: install the latest version of snap
+  dnf:
+    name: snap
+    state: latest
