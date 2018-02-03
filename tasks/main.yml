@@ -1,14 +1,14 @@
 ---
   # TravisCI Docker test role
 
-- name: install the 'C development libraries' package group
+- name: install the 'C Development Tools and Libraries' package group
   dnf:
-    name: '@C development libraries'
+    name: '@C Development Tools and Libraries'
     state: present
 
-- name: install the 'Development libraries' package group
+- name: install the 'Development Libraries' package group
   dnf:
-    name: '@Development libraries'
+    name: '@Development Libraries'
     state: present
 
 - name: install the latest version of clang
@@ -36,9 +36,9 @@
     name: python3
     state: latest
 
-- name: install the 'Development tools' package group
+- name: install the 'Development Tools' package group
   dnf:
-    name: '@Development tools'
+    name: '@Development Tools'
     state: present
 
 - name: install the 'Editors' package group
